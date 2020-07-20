@@ -2,24 +2,52 @@
   "name": "dockman",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "DockMan Team"
+  },
+  "main": "main.js",
+  "build": {
+    "appId": "singh.iva.dockman",
+    "directories": {
+      "buildResources": "src/assets"
+    },
+    "win": {
+      "category": "singh.iva.dockman.utility",
+      "iconUrl": "src/assets/icon.png"
+    },
+    "mac": {
+      "category": "singh.iva.dockman.utility",
+      "iconUrl": "path-to-icon.png"
+    }
+  },
   "dependencies": {
+    "@craco/craco": "^5.6.4",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "@types/dockerode": "^2.5.34",
     "@types/jest": "^24.9.1",
     "@types/node": "^12.12.50",
     "@types/react": "^16.9.43",
     "@types/react-dom": "^16.9.8",
+    "concurrently": "^5.2.0",
+    "dockerode": "^3.2.0",
+    "electron-is-dev": "^1.2.0",
+    "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
-    "typescript": "^3.7.5"
+    "typescript": "^3.7.5",
+    "wait-on": "^5.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "react-start": "craco start",
+    "react-build": "react-scripts build",
+    "react-test": "react-scripts test",
+    "react-eject": "react-scripts eject",
+    "electron-start": "electron .",
+    "start": "concurrently \"cross-env BROWSER=none npm run react-start\"\" wait-on http://localhost:3000 && electon-start\"",
+    "electron-dev": "concurrently \"BROWSER=none npm run react-start\" \"wait-on http://localhost:3000 && electron .\""
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,5 +63,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "electron": "^9.1.0",
+    "electron-builder": "^22.7.0"
   }
 }

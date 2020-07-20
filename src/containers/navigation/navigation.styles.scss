@@ -1,0 +1,43 @@
+.Navigation {
+  margin-top: 1rem;
+  width: 100%;
+  .navigation {
+    margin-top: 1rem;
+    text-align: center;
+    width: 100%;
+    height: 6rem;
+    background-color: rgb(80, 80, 80);
+    border-radius: 0.5rem;
+
+    &:hover {
+      transition: 0.15s;
+      background: linear-gradient(
+        to top,
+        rgb(96, 96, 96),
+        rgba(96, 96, 96, 0.1)
+      );
+    }
+
+    .item {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      .svg {
+        margin-top: auto;
+        margin-bottom: auto;
+        width: 3rem;
+
+        margin: 0 2rem;
+      }
+
+      .small-size {
+        width: 2.5rem;
+        margin: 0 2.2rem;
+      }
+    }
+  }
+}
+
+.active {
+  background: linear-gradient(rgb(0, 140, 255), rgb(52, 197, 255));
+}
