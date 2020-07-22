@@ -39,5 +39,5 @@
 }
 
 .active {
-  background: linear-gradient(rgb(0, 140, 255), rgb(52, 197, 255));
+  background: var(--active-color)
 }
