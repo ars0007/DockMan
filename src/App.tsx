@@ -4,11 +4,19 @@ import "./App.scss";
 import { ReactComponent as Logo } from "./assets/logo.svg";
 
 import Navigation from "./containers/navigation/navigation.container";
-import { listContainers } from "./api/container.api";
+import ContainerAPI from "./api/container.api";
+import Home from "./containers/home/home.component";
 
 class App extends React.Component {
+  containerInstance: ContainerAPI;
+  constructor(props: any) {
+    super(props);
+    this.containerInstance = new ContainerAPI();
+  }
   componentDidMount() {
-    // console.log(listContainers());
+    this.containerInstance.listContainers().then((containers) => {
+      console.log(containers);
+    });
     // listContainers();
   }
 
@@ -25,7 +33,9 @@ class App extends React.Component {
             <Navigation />
           </div>
         </div>
-        <div className="App_main">Main</div>
+        <div className="App_main">
+          <Home />
+        </div>
       </div>
     );
   }

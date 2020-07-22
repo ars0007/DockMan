@@ -42,11 +42,11 @@
   },
   "scripts": {
     "react-start": "craco start",
-    "react-build": "react-scripts build",
-    "react-test": "react-scripts test",
+    "react-build": "craco build",
+    "react-test": "carco test",
     "react-eject": "react-scripts eject",
     "electron-start": "electron .",
-    "start": "concurrently \"cross-env BROWSER=none npm run react-start\"\" wait-on http://localhost:3000 && electon-start\"",
+    "start": "concurrently \"cross-env BROWSER=none npm run react-start\" \"wait-on http://localhost:3000 && npm run electron-start\"",
     "electron-dev": "concurrently \"BROWSER=none npm run react-start\" \"wait-on http://localhost:3000 && electron .\""
   },
   "eslintConfig": {

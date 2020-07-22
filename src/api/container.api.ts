@@ -1,16 +1,17 @@
+import Singleton from "./singleton.api";
 import Docker from "dockerode";
 
-const docker = new Docker();
+class ContainerAPI {
+  private dockerInstance: Docker;
 
+  constructor() {
+    this.dockerInstance = Singleton.getInstance();
+  }
 
-// class ContainerAPI{
-//   constructor(dockerHostUrl: string){
-//     this.dockerInstance = new Docker()
-//   }
-// }
+  async listContainers() {
+    const containers = await this.dockerInstance.listContainers();
+    return containers;
+  }
+}
 
-export const listContainers = () => {
-  docker.listContainers(function (err: any, containers: any) {
-    console.log(containers);
-  });
-};
+export default ContainerAPI;
