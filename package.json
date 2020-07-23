@@ -22,6 +22,9 @@
   },
   "dependencies": {
     "@craco/craco": "^5.6.4",
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/react-fontawesome": "^0.1.11",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -30,24 +33,26 @@
     "@types/node": "^12.12.50",
     "@types/react": "^16.9.43",
     "@types/react-dom": "^16.9.8",
+    "@types/react-router-dom": "^5.1.5",
     "concurrently": "^5.2.0",
     "dockerode": "^3.2.0",
     "electron-is-dev": "^1.2.0",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "typescript": "^3.7.5",
     "wait-on": "^5.1.0"
   },
   "scripts": {
-    "react-start": "craco start",
+    "craco-start": "craco start",
     "react-build": "craco build",
     "react-test": "carco test",
+    "react-start": "react-scripts start",
     "react-eject": "react-scripts eject",
     "electron-start": "electron .",
-    "start": "concurrently \"cross-env BROWSER=none npm run react-start\" \"wait-on http://localhost:3000 && npm run electron-start\"",
-    "electron-dev": "concurrently \"BROWSER=none npm run react-start\" \"wait-on http://localhost:3000 && electron .\""
+    "start": "concurrently \"cross-env BROWSER=none npm run craco-start\" \"wait-on http://localhost:3000 && npm run electron-start\""
   },
   "eslintConfig": {
     "extends": "react-app"
