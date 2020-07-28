@@ -1,0 +1,59 @@
+.Image {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+
+  .spacer {
+    height: 1rem;
+  }
+
+  &__content {
+    width: 90%;
+    height: 90%;
+    align-self: center;
+    padding: 1rem 1rem;
+    background-color: white;
+
+    border-radius: 1rem;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    thead {
+      background-color: coral;
+    }
+
+    th {
+      padding: 1rem 1rem;
+      font-size: 1.8rem;
+      color: white;
+    }
+
+    .one_row {
+      height: 7rem;
+      margin-top: 100px;
+      background-color: white;
+      border-radius: 0.5rem;
+
+      transition: transform 0.15s ease-in-out;
+
+      box-shadow: -2px -2px 10px #d1d6f4, 2px 2px 10px #d1d6f4;
+
+      &:hover {
+        box-shadow: -5px -5px 10px #d1d6f4, 5px 5px 10px #d1d6f4;
+      }
+    }
+
+    td {
+      max-width: 5rem;
+      text-align: center;
+      margin-top: 1rem;
+      padding: 0 1rem;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}

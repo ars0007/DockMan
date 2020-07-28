@@ -26,7 +26,7 @@ const Navigation = (props) => {
                 <NavLink to="/home">
                     <div className="item">
                         <Home className="svg" />
-                        <h4>Home</h4>
+                        <h5>Home</h5>
                     </div>
                 </NavLink>
             </div>
@@ -34,7 +34,7 @@ const Navigation = (props) => {
                 <NavLink to="/containers">
                     <div className="item">
                         <Conatiner className="svg" />
-                        <h4>Container</h4>
+                        <h5>Container</h5>
                     </div>
                 </NavLink>
             </div>
@@ -42,7 +42,7 @@ const Navigation = (props) => {
                 <NavLink to="/images">
                     <div className="item">
                         <Image className="svg small-size" />
-                        <h4>Images</h4>
+                        <h5>Images</h5>
                     </div>
                 </NavLink>
             </div>
@@ -50,7 +50,7 @@ const Navigation = (props) => {
                 <NavLink to="/networks">
                     <div className="item">
                         <Network className="svg" />
-                        <h4>Network</h4>
+                        <h5>Network</h5>
                     </div>
                 </NavLink>
             </div>
@@ -58,7 +58,7 @@ const Navigation = (props) => {
                 <NavLink to="/volumes">
                     <div className="item">
                         <Volume className="svg" />
-                        <h4>Volume</h4>
+                        <h5>Volume</h5>
                     </div>
                 </NavLink>
             </div>
@@ -66,7 +66,7 @@ const Navigation = (props) => {
                 <NavLink to="/stats">
                     <div className="item">
                         <Stats className="svg" />
-                        <h4>Stats</h4>
+                        <h5>Stats</h5>
                     </div>
                 </NavLink>
             </div>
@@ -74,7 +74,7 @@ const Navigation = (props) => {
                 <NavLink to="/ports">
                     <div className="item">
                         <Ports className="svg" />
-                        <h4>Ports</h4>
+                        <h5>Ports</h5>
                     </div>
                 </NavLink>
             </div>

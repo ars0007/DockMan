@@ -30,13 +30,17 @@ const Card: React.FC<Props> = (props) => {
           <div className="Card__main_status">
             <div className="Card__main_status-running">
               <PowerStatus className="svg on" />
-              <span className="Card__main_status_number">2</span>
+              <span className="Card__main_status_number">
+                {props.container.running}
+              </span>
               <span className="Card__main_status_quo">running</span>
             </div>
 
             <div className="Card__main_status-running">
               <PowerStatus className="svg off" />
-              <span className="Card__main_status_number">5</span>
+              <span className="Card__main_status_number">
+                {props.container.stopped}
+              </span>
               <span className="Card__main_status_quo">stopped</span>
             </div>
           </div>

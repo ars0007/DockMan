@@ -5,7 +5,7 @@ dockMan is a cross platform native application for docker management.
 
 ## Screenshots
 
-<img src="https://raw.githubusercontent.com/ars0007/DockMan/master/screenshots/img1.png" width="600" height="600">
+<img src="https://raw.githubusercontent.com/ars0007/DockMan/master/screenshots/img1.png" width="800" height="600">
 
 ## Local development
 

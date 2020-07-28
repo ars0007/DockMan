@@ -2,23 +2,116 @@ import * as React from "react";
 import "./containers.styles.scss";
 import ContainerAPI from "../../api/container.api";
 
-const Containers: React.FC<string> = (props) => {
-  const instance: ContainerAPI = new ContainerAPI();
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faExternalLinkAlt,
+  faArrowRight,
+} from "@fortawesome/free-solid-svg-icons";
 
-  const [constainers, setContainers] = React.useState([])
+const containers: any[] = [
+  {
+    name: "prisma_postgres_1",
+    status: "running",
+    timestamp: "2020-07-24 10:51:11",
+    image: "postgresjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj",
+  },
+  {
+    name: " portainer",
+    status: "running",
+    timestamp: "2020-07-24 10:51:11",
+    image: "portainer/portainer",
+  },
+  {
+    name: "mongo_mongo_1",
+    status: "running",
+    timestamp: "2020-07-24 10:51:11",
+    image: "mongo",
+  },
+  {
+    name: " ghost",
+    status: "stopped",
+    timestamp: "2020-07-24 10:51:11",
+    image: "ghost:latest",
+  },
+];
 
-  React.useEffect(() => {
-    instance.listContainers().then((cntrs) =>{
-      console.log(cntrs);
-      setContainers(cntrs as any)
-    })
-  }, []);
+class Containers extends React.Component<any, any> {
+  instance: ContainerAPI = new ContainerAPI();
 
-  return (
-    <div className="containers">
-      <h1>Containers: {constainers.length}</h1>
-    </div>
-  );
-};
+  constructor(props: any) {
+    super(props);
+    this.state = { containers: [] };
+  }
+
+  componentDidMount() {
+    // document.title = "Conatiners";
+    this.instance
+      .listContainers(true)
+      .then((containers) => this.setState({ containers: containers }));
+  }
+
+  rowCard = (container: any) => {
+    return (
+      <div className="containers__table_row">
+        <div className="circle">
+          <h3>{container.Names[0][0].toUpperCase()}</h3>
+        </div>
+
+        <div className="containers__table_name">
+          <h4 className="name">{container.Names[0]}</h4>
+        </div>
+
+        <div className="containers__table_other_content">
+          <div className="containers__table_image">
+            <span className="image">{container.Image}</span>
+          </div>
+
+          <div
+            className={`containers__table_status ${
+              container.State === "running" ? "running" : "stopped"
+            }`}
+          >
+            <h5>{container.State}</h5>
+          </div>
+
+          <div className="containers__table_ports">
+            <h5>
+              {container.Ports.length > 0
+                ? container.Ports[0].PublicPort
+                : "No Ports"}
+            </h5>
+            {container.Ports.length > 0 ? (
+              <FontAwesomeIcon
+                icon={faExternalLinkAlt}
+                className="external_link"
+              />
+            ) : (
+              ""
+            )}
+          </div>
+
+          <div className="containers__table_timestamp">
+            <span>{new Date(container.Created).toLocaleString()}</span>
+          </div>
+        </div>
+        <div className="containers__table_open">
+          <FontAwesomeIcon icon={faArrowRight} />
+        </div>
+      </div>
+    );
+  };
+
+  render() {
+    return (
+      <div className="containers">
+        <div className="containers__table">
+          {this.state.containers.map((container: any) => (
+            <div key={container.Id}>{this.rowCard(container)}</div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+}
 
 export default Containers;

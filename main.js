@@ -13,6 +13,7 @@ function createWindow() {
     mainWindow = new BrowserWindow({
         width: 1360,
         height: 768,
+        maxHeight: 768,
 
         // Enable nodejs
         webPreferences: {

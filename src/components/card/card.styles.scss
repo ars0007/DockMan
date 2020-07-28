@@ -2,16 +2,19 @@
   display: flex;
   width: 45rem;
   height: 25rem;
-  background-color: #333333;
+  background-color: #ffffff;
   border-radius: 0.5rem;
   text-align: center;
 
   margin: 1rem 1rem;
+  border-radius: .5rem;
+
+  box-shadow: 2px 2px 1rem #d1d6f4;
 
   &__color {
     width: 30%;
     height: 100%;
-    background: var(--active-color);
+    background: rgb(243, 243, 243)
   }
 
   &__main {
@@ -24,11 +27,12 @@
       width: 100%;
       text-align: center;
       margin: 0.5rem;
-      color: #d1d1d1;
+      color: #4b4a4a;
     }
 
     &-total_containers {
       font-size: 4rem;
+      color: #333;
     }
 
     &_status {
@@ -45,10 +49,11 @@
         font-size: 2rem;
         margin-left: 1rem;
         margin-right: 2rem;
+        color: rgb(114, 114, 114);
       }
 
       &_quo {
-        color: rgb(200, 200, 200);
+        color: rgb(114, 114, 114);
       }
 
       .svg {

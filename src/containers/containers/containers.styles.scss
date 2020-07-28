@@ -1,0 +1,143 @@
+.containers {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+
+
+  padding: 1rem 1rem;
+
+  &__table {
+    overflow: auto;
+    width: 98%;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0;
+    padding: 2rem 2rem;
+    background-color: white;
+    border-radius: 1rem;
+
+    overflow: auto;
+
+    &_head{
+      background-color: #333;
+      height: 5rem;
+      color: white;
+
+      display: flex;
+      align-items: center;
+
+      .text{
+        margin: 0 5rem;
+      }
+    }
+
+    &_row {
+      display: flex;
+      height: 8rem;
+      background-color: white;
+      border-radius: 0.5rem;
+      margin: 1rem 0;
+
+      transition: transform 0.15s ease-in-out;
+
+      align-items: center;
+
+      box-shadow: -5px -5px 10px #d1d6f4, 5px 5px 10px #d1d6f4;
+
+      &:hover {
+        transform: translateY(-0.2rem);
+        box-shadow: -10px -10px 15px #d1d6f4, 10px 10px 15px #d1d6f4;
+      }
+    }
+
+    &_other_content {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      flex: 0.98;
+    }
+
+    &_status {
+      padding: 1.2rem 2rem;
+      border-radius: 0.5rem;
+      color: white;
+    }
+
+    .running {
+      background-color: yellowgreen;
+    }
+
+    .stopped {
+      background-color: rgb(187, 23, 72);
+    }
+
+    &_ports {
+      display: flex;
+      font-size: 1.8rem;
+      padding: 1rem 2rem;
+      border-radius: 0.5rem;
+      color: #8894d8;
+
+      .external_link {
+        font-size: 1.6rem;
+        margin: 0 0.5rem;
+      }
+    }
+
+    &_timestamp {
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: #666666;
+    }
+
+    &_name {
+      display: flex;
+      width: 10rem;
+      flex-direction: column;
+      .name {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: rgb(65, 65, 65);
+        font-size: 1.8rem;
+      }
+    }
+
+    &_image {
+      display: flex;
+      background-color: rgb(247, 216, 40);
+      padding: 0.5rem 1rem;
+      width: 10rem;
+      color: rgba(51, 51, 51, 0.637);
+      font-size: 1.6rem;
+      overflow: hidden;
+      border-radius: 0.5rem;
+      color: rgb(85, 84, 84);
+
+      .image {
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .circle {
+      width: 6rem;
+      height: 6rem;
+      margin: 0 1rem;
+      border-radius: 10rem;
+      font-size: 2rem;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      border: 1px #d1d6f4 solid;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    overflow: scroll;
+    
+  }
+}

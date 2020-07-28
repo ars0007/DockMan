@@ -11,6 +11,10 @@ import Home from "./containers/home/home.component";
 
 import Containers from "./containers/containers/containers.container";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCogs, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import ImageContainer from "./containers/images/image.container";
+
 class App extends React.Component {
   containerInstance: ContainerAPI;
   constructor(props: any) {
@@ -18,9 +22,8 @@ class App extends React.Component {
     this.containerInstance = new ContainerAPI();
   }
   componentDidMount() {
-    this.containerInstance.listContainers().then((containers) => {
-      console.log(containers);
-    });
+    console.log("Mounted");
+    this.containerInstance.listContainers(true).then((cntrs) => console.log(cntrs));
   }
 
   render() {
@@ -35,13 +38,17 @@ class App extends React.Component {
           <div className="App__sidebar__navigation">
             <Navigation />
           </div>
+          <div className="App__sidebar_settings">
+            <FontAwesomeIcon icon={faCogs} />
+            <FontAwesomeIcon icon={faArrowRight} style={{ float: "right" }} />
+          </div>
         </div>
-        <div className="App_main">
+        <div className="App__main">
           <Switch>
             <Route exact path="/" render={() => <Redirect to="/home" />} />
             <Route path="/home" component={Home} />
-            <Route path="/containers" component={Containers}/>
-            <Route path="/images" render={() => <h1>Images</h1>} />
+            <Route path="/containers" component={Containers} />
+            <Route path="/images" component={ImageContainer} />
             <Route path="/networks" render={() => <h1>Networks</h1>} />
             <Route path="/volumes" render={() => <h1>Volumes</h1>} />
             <Route path="/stats" render={() => <h1>Stats</h1>} />

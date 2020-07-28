@@ -8,9 +8,15 @@ class ContainerAPI {
     this.dockerInstance = Singleton.getInstance();
   }
 
-  async listContainers() {
-    const containers = await this.dockerInstance.listContainers();
-    return containers;
+  async listContainers(isAll = false) {
+    const containers = await this.dockerInstance.listContainers({ all: isAll });
+    const nameFixedContainers = containers.map((container) => {
+      if (container.Names[0].startsWith("/")) {
+        container.Names[0] = container.Names[0].substr(1);
+      }
+      return container;
+    });
+    return nameFixedContainers;
   }
 }
 
