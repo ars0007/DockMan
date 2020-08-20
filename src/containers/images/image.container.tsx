@@ -16,7 +16,6 @@ class ImageContainer extends React.Component {
               </tr>
             </thead>
             <tbody>
-              <tr className="spacer"></tr>
               <tr className="one_row">
                 <td >111111111111111111111111111</td>
                 <td>Domenic</td>

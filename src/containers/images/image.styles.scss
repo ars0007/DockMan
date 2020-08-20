@@ -22,13 +22,13 @@
     }
 
     thead {
-      background-color: coral;
+      background-color: white;
+      color: #333;
     }
 
     th {
       padding: 1rem 1rem;
       font-size: 1.8rem;
-      color: white;
     }
 
     .one_row {
@@ -40,6 +40,7 @@
       transition: transform 0.15s ease-in-out;
 
       box-shadow: -2px -2px 10px #d1d6f4, 2px 2px 10px #d1d6f4;
+      cursor: pointer;
 
       &:hover {
         box-shadow: -5px -5px 10px #d1d6f4, 5px 5px 10px #d1d6f4;
@@ -50,7 +51,7 @@
       max-width: 5rem;
       text-align: center;
       margin-top: 1rem;
-      padding: 0 1rem;
+      padding: 0 5rem;
 
       overflow: hidden;
       text-overflow: ellipsis;
