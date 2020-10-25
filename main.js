@@ -14,6 +14,7 @@ function createWindow() {
         width: 1360,
         height: 768,
         maxHeight: 768,
+        frame: false,
 
         // Enable nodejs
         webPreferences: {

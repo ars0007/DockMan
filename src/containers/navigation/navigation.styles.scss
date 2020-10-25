@@ -1,49 +1,11 @@
 .Navigation {
-  margin-top: 1rem;
+  margin-top: 10rem;
+  height: 100%;
   width: 100%;
-
-  a{
-    text-decoration: none;
-    color: white;
-  }
-  .navigation {
-    margin-top: 1rem;
-    text-align: center;
-    width: 100%;
-    height: 5rem;
-    border-radius: 0.5rem;
-
-    &:hover {
-      transition: 0.15s;
-      background: linear-gradient(
-        to top,
-        rgb(96, 96, 96),
-        rgba(96, 96, 96, 0.1)
-      );
-    }
-
-    .item {
-      display: flex;
-      align-items: center;
-      height: 100%;
-      font-size: 2rem;
-      .svg {
-        margin-top: auto;
-        margin-bottom: auto;
-        width: 2.5rem;
-
-        margin: 0 2rem;
-      }
-
-      .small-size {
-        width: 2rem;
-        margin: 0 2.2rem;
-      }
-    }
-  }
+  background-color: yellow;
 }
 
 .active {
-  background: var(--active-color)
+  border-left: 5px solid ;
 }
 

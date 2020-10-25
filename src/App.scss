@@ -14,12 +14,11 @@
     position: relative;
     overflow: auto;
 
-    min-width: 250px;
+    min-width: 120px;
     min-height: 100%;
     width: 15%;
 
     color: whitesmoke;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
 
     &__logo {
       margin-top: 1rem;
@@ -32,8 +31,24 @@
     }
 
     &__navigation {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem 0;
+      align-items: center;
+      margin: 2rem 0 5rem 0;
       width: 90%;
-      margin-top: 1.5rem;
+      height: 90%;
+
+      background: #151423;
+      border: 1px solid #26243f;
+      box-sizing: border-box;
+      box-shadow: -5px -5px 12px #232239, 6px 6px 12px #121120,
+        inset 0px 0px 3px #202124;
+      border-radius: 0px 25px 25px 0px;
+
+      .svg{
+        height: 10rem;
+      }
     }
 
     &_settings {
@@ -54,7 +69,9 @@
   }
 
   &__main {
+    display: flex;
+    justify-content: center;
     width: 100%;
-    background-color: #e7eafb;
+    background-color: var(--color-background);
   }
 }

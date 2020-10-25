@@ -15,6 +15,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCogs, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import ImageContainer from "./containers/images/image.container";
 
+import { ReactComponent as Dashboard } from "./assets/dashboard_v2.svg";
+import { ReactComponent as ContainersSvg } from "./assets/containers_group.svg";
+import { ReactComponent as ImagesSvg } from "./assets/images_group.svg";
+import { ReactComponent as NetworkSvg } from "./assets/network_group.svg";
+import { ReactComponent as StatsSvg } from "./assets/stats_group.svg";
+
+
 class App extends React.Component {
   containerInstance: ContainerAPI;
   constructor(props: any) {
@@ -34,9 +41,12 @@ class App extends React.Component {
             <Logo className="App__sidebar__logo-svg" />
             <h3>DockMan</h3>
           </div>
-          <div className="App__sidebar__thin_line"></div>
           <div className="App__sidebar__navigation">
-            <Navigation />
+            <Dashboard className="svg"/>
+            <ContainersSvg className="svg" />
+            <ImagesSvg className="svg" />
+            <NetworkSvg className="svg" />
+            <StatsSvg className="svg" />
           </div>
           <div className="App__sidebar_settings">
             <FontAwesomeIcon icon={faCogs} />
