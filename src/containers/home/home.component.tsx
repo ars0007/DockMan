@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Card from "../../components/card/card.component";
 import { ReactComponent as Woman } from "../../assets/characterwoman.svg";
 import "./home.styles.scss";
 
@@ -64,35 +63,6 @@ class Home extends Component<any, any> {
       </div>
     );
   }
-}
-
-{
-  /* <div className="Home__row">
-          <h1>{this.state.name}</h1>
-          <Card
-            isContainer={true}
-            title="Container"
-            container={this.state.data.container}
-            size={this.state.data.container.size}
-          />
-          <Card
-            title="Images"
-            images={this.state.data.image}
-            size={this.state.data.image.size}
-          />
-        </div>
-        <div className="Home__row">
-          <Card
-            title="Volumes"
-            volumes={this.state.data.volume}
-            size={this.state.data.volume.size}
-          />
-          <Card
-            title="Networks"
-            networks={this.state.data.network}
-            size={this.state.data.network.size}
-          />
-        </div> */
 }
 
 export default Home;
