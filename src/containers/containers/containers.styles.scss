@@ -4,7 +4,6 @@
   display: flex;
   justify-content: center;
 
-
   padding: 1rem 1rem;
 
   &__table {
@@ -15,12 +14,17 @@
     flex-direction: column;
     margin: 2rem 0;
     padding: 2rem 2rem;
-    background-color: white;
+    background: #151423;
+    border: 1px solid #26243f;
+    box-sizing: border-box;
+    box-shadow: -5px -5px 12px #232239, 6px 6px 12px #121120,
+      inset 0px 0px 3px #202124;
+    border-radius: 0px 25px 25px 0px;
     border-radius: 1rem;
 
     overflow: auto;
 
-    &_head{
+    &_head {
       background-color: #333;
       height: 5rem;
       color: white;
@@ -28,15 +32,16 @@
       display: flex;
       align-items: center;
 
-      .text{
+      .text {
         margin: 0 5rem;
       }
     }
 
     &_row {
       display: flex;
-      height: 8rem;
-      background-color: white;
+      height: 7rem;
+      background: #151423;
+      border: 1px solid #26243f;
       border-radius: 0.5rem;
       margin: 1rem 0;
 
@@ -44,11 +49,8 @@
 
       align-items: center;
 
-      box-shadow: -5px -5px 10px #d1d6f4, 5px 5px 10px #d1d6f4;
-
       &:hover {
         transform: translateY(-0.1rem);
-        box-shadow: -10px -10px 15px #d1d6f4, 10px 10px 15px #d1d6f4;
       }
     }
 
@@ -99,7 +101,7 @@
       .name {
         overflow: hidden;
         text-overflow: ellipsis;
-        color: rgb(65, 65, 65);
+        color: rgb(218, 218, 218);
         font-size: 1.8rem;
       }
     }
@@ -108,8 +110,8 @@
       display: flex;
       background-color: rgb(247, 216, 40);
       padding: 0.5rem 1rem;
-      width: 10rem;
-      color: rgba(51, 51, 51, 0.637);
+      width: 12rem;
+      color: rgba(105, 105, 105, 0.637);
       font-size: 1.6rem;
       overflow: hidden;
       border-radius: 0.5rem;
@@ -131,6 +133,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      color: #d1d6f4;
 
       border: 1px #d1d6f4 solid;
     }
@@ -138,6 +141,5 @@
 
   @media (max-width: 1200px) {
     overflow: scroll;
-    
   }
 }

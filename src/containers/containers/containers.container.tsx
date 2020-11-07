@@ -8,32 +8,6 @@ import {
   faArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
 
-const containers: any[] = [
-  {
-    name: "prisma_postgres_1",
-    status: "running",
-    timestamp: "2020-07-24 10:51:11",
-    image: "postgresjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj",
-  },
-  {
-    name: " portainer",
-    status: "running",
-    timestamp: "2020-07-24 10:51:11",
-    image: "portainer/portainer",
-  },
-  {
-    name: "mongo_mongo_1",
-    status: "running",
-    timestamp: "2020-07-24 10:51:11",
-    image: "mongo",
-  },
-  {
-    name: " ghost",
-    status: "stopped",
-    timestamp: "2020-07-24 10:51:11",
-    image: "ghost:latest",
-  },
-];
 
 class Containers extends React.Component<any, any> {
   instance: ContainerAPI = new ContainerAPI();
