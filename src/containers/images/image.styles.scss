@@ -4,10 +4,6 @@
   height: 100vh;
   width: 100%;
 
-  .spacer {
-    height: 1rem;
-  }
-
   &__content {
     width: 90%;
     height: 90%;
@@ -20,41 +16,5 @@
       inset 0px 0px 3px #202124;
     border-radius: 0px 25px 25px 0px;
     border-radius: 1rem;
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    thead {
-      color: rgb(160, 160, 160);
-    }
-
-    th {
-      padding: 1rem 1rem;
-      font-size: 1.8rem;
-    }
-
-    .one_row {
-      height: 5.5rem;
-      color: white;
-      background-color: #1c1c35;
-      margin-top: 100px;
-      transition: transform 0.15s ease-in-out;
-      cursor: pointer;
-      &:hover {
-        background-color: #19192b;
-      }
-    }
-
-    td {
-      max-width: 5rem;
-      text-align: center;
-      margin-top: 1rem;
-      padding: 0 5rem;
-
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
   }
 }
