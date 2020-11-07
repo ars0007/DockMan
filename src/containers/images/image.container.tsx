@@ -1,44 +1,19 @@
 import React from "react";
+import CustomTable from "../../components/CustomTable/customTable.component";
 import "./image.styles.scss";
+
+const COLUMS = ["Id", "Tags", "Size", "Created"];
+const ITEMS = [
+  { Id: "1234", Tags: "image", Size: "10", Created: "10-02-1010" },
+  { Id: "1234", Tags: "image", Size: "10", Created: "10-02-1010" },
+];
 
 class ImageContainer extends React.Component {
   render() {
     return (
       <div className="Image">
         <div className="Image__content">
-          <table>
-            <thead>
-              <tr>
-                <th>Id</th>
-                <th>Tags</th>
-                <th>Size</th>
-                <th>Created</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="one_row">
-                <td >111111111111111111111111111</td>
-                <td>Domenic</td>
-                <td>88,110</td>
-                <td>dcode</td>
-              </tr>
-              <tr className="spacer"></tr>
-              <tr className="one_row">
-                <td>2</td>
-                <td>Sally</td>
-                <td>72,400</td>
-                <td>Students</td>
-              </tr>
-              <tr className="spacer"></tr>
-              <tr className="one_row">
-                <td>3</td>
-                <td>Nick</td>
-                <td>52,300</td>
-                <td>dcode</td>
-              </tr>
-              <tr className="spacer"></tr>
-            </tbody>
-          </table>
+          <CustomTable columns={COLUMS} items={ITEMS}/>
         </div>
       </div>
     );
