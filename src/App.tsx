@@ -19,6 +19,7 @@ import { ReactComponent as ContainersSvg } from "./assets/containers_v3.svg";
 import { ReactComponent as ImagesSvg } from "./assets/images_group_v3.svg";
 import { ReactComponent as NetworkSvg } from "./assets/network_group.svg";
 import { ReactComponent as StatsSvg } from "./assets/stats_group_v3.svg";
+import Networks from "./containers/networks/networks.container";
 
 class App extends React.Component {
   containerInstance: ContainerAPI;
@@ -73,7 +74,7 @@ class App extends React.Component {
             <Route path="/home" component={Home} />
             <Route path="/containers" component={Containers} />
             <Route path="/images" component={ImageContainer} />
-            <Route path="/networks" render={() => <h1>Networks</h1>} />
+            <Route path="/networks" component={Networks} />
             <Route path="/volumes" render={() => <h1>Volumes</h1>} />
             <Route path="/stats" render={() => <h1>Stats</h1>} />
             <Route path="/ports" render={() => <h1>Ports</h1>} />

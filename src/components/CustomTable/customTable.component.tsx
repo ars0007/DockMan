@@ -2,8 +2,8 @@ import React from "react";
 import "./customTable.styles.scss";
 
 const CustomTable = (props: any) => {
-  const columns: Array<string> = props.columns;
-  const items: Array<any> = props.items;
+  const columns: Array<string> = props.columns || [];
+  const items: Array<any> = props.items || [];
 
   const buildRow = (item: any) => {
     const a = (
@@ -29,14 +29,20 @@ const CustomTable = (props: any) => {
           </tr>
         </thead>
         <tbody>
-          {items.map((item) => {
-            return (
-              <React.Fragment>
-                {buildRow(item)}
-                <tr className="spacer"></tr>
-              </React.Fragment>
-            );
-          })}
+          {items.length <= 0 ? (
+            <div className="custom-table__no-items">
+              <span>No Items</span>
+            </div>
+          ) : (
+            items.map((item) => {
+              return (
+                <React.Fragment>
+                  {buildRow(item)}
+                  <tr className="spacer"></tr>
+                </React.Fragment>
+              );
+            })
+          )}
         </tbody>
       </table>
     </div>
