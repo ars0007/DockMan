@@ -8,7 +8,6 @@ import {
   faArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
 
-
 class Containers extends React.Component<any, any> {
   instance: ContainerAPI = new ContainerAPI();
 
@@ -18,7 +17,7 @@ class Containers extends React.Component<any, any> {
   }
 
   componentDidMount() {
-    // document.title = "Conatiners";
+    document.title = "Conatiners";
     this.instance
       .listContainers(true)
       .then((containers) => this.setState({ containers: containers }));
@@ -26,7 +25,10 @@ class Containers extends React.Component<any, any> {
 
   rowCard = (container: any) => {
     return (
-      <div className="containers__table_row">
+      <div
+        className="containers__table_row"
+        onClick={() => this.props.history.push(`/container-details/${container.Id}`)}
+      >
         <div className="circle">
           <h3>{container.Names[0][0].toUpperCase()}</h3>
         </div>

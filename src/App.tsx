@@ -20,18 +20,13 @@ import { ReactComponent as ImagesSvg } from "./assets/images_group_v3.svg";
 import { ReactComponent as NetworkSvg } from "./assets/network_group.svg";
 import { ReactComponent as StatsSvg } from "./assets/stats_group_v3.svg";
 import Networks from "./containers/networks/networks.container";
+import ContainerDetails from "./containers/containers/container-details/container-details.container";
 
 class App extends React.Component {
   containerInstance: ContainerAPI;
   constructor(props: any) {
     super(props);
     this.containerInstance = new ContainerAPI();
-  }
-  componentDidMount() {
-    console.log("Mounted");
-    this.containerInstance
-      .listContainers(true)
-      .then((cntrs) => console.log(cntrs));
   }
 
   render() {
@@ -72,7 +67,10 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/" render={() => <Redirect to="/home" />} />
             <Route path="/home" component={Home} />
+
             <Route path="/containers" component={Containers} />
+            <Route path="/container-details/:containerId" component={ContainerDetails} />
+
             <Route path="/images" component={ImageContainer} />
             <Route path="/networks" component={Networks} />
             <Route path="/volumes" render={() => <h1>Volumes</h1>} />
