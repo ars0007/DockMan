@@ -4,12 +4,44 @@
   width: 100%;
   padding: 1rem 1rem;
 
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+
+    .id-column {
+      text-align: center;
+
+      .id-value{
+        margin: auto;
+        width: 25rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      
+    }
+
+    td {
+      margin: 0 5px;
+      text-align: center;
+      border: 1px solid #786eff;
+      height: 5rem;
+    }
+  }
+
   &__main {
-    display: flex;
-    height: 90vh;
+    min-height: 90vh;
     margin: 2rem 0;
     border-radius: 1rem;
     padding: 2rem 2rem;
+    
+
+    &-header {
+      border-bottom: 1px solid #006bf2;
+      height: 3rem;
+      width: 100%;
+    }
 
     &-actions {
       padding: 1rem;
@@ -17,44 +49,53 @@
       width: 60rem;
       border-radius: 0.5rem;
 
-      .actions-header {
-        border-bottom: 1px solid #006bf2;
-        height: 3rem;
-        width: 100%;
-      }
-
-      .actions-content{
+      .actions-content {
         margin: 1rem 0;
         display: flex;
         justify-content: space-evenly;
 
-        .start{
+        .start {
           background-color: green;
         }
 
-        .pause{
+        .pause {
           background-color: rgb(0, 0, 144);
         }
 
-        .stop{
+        .stop {
           background-color: rgb(138, 0, 0);
         }
 
-        .action-item{
+        .action-item {
           display: flex;
-          padding: .5rem 1rem;
+          padding: 0.5rem 1rem;
           width: 10rem;
           border-radius: 2px;
 
-          span{
+          span {
             margin-left: 8px;
           }
         }
       }
     }
+
+    &-status {
+      height: 32rem;
+      width: 80%;
+      margin: 1rem 0;
+      padding: 1rem;
+      border-radius: 1rem;
+    }
+
+    &-info{
+      width: 80%;
+      margin-top: 1rem;
+      padding: 1rem 1rem;
+      border-radius: .5rem;
+    }
   }
 
-  &__spinner{
+  &__spinner {
     height: 6rem;
     width: 6rem;
   }

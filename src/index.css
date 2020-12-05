@@ -5,6 +5,28 @@
   --active-color: linear-gradient(rgb(0, 140, 255), rgb(52, 197, 255));
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 10px;
+  
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #050611; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(67, 117, 255); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(47, 61, 253); 
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -35,6 +57,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: auto;
+  scroll-behavior: smooth;
 }
 
 code {
